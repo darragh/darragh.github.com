@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <!--
+      http://www.howtocreate.co.uk/tutorials/javascript/domevents
+http://www.quirksmode.org/js/introevents.html
+  // -->
+  <script type="text/javascript">
+    var captures = null;
+    var capture = function(e){e.stopPropagation();
+      captures = e;
+      e.preventDefault();
+      console.log('capturing');
+      console.debug(e);
+      console.debug(e.target);
+    };
+    document.addEventListener('click', capture, true);
+    // dispatch event 
+    function clearCapture(){
+      document.removeEventListener('click',capture, true)
+    }
+    function fireEvent(){
+      console.log('fire')
+      if(captures !=null){
+        var fireOnThis = captures.target;
+        var evObj = document.createEvent('MouseEvents');
+        evObj.initEvent( 'click', true, true );
+        fireOnThis.dispatchEvent(evObj);
+        console.log('fired')
+      }
+    }
+    function click1(){
+        var fireOnThis = document.getElementById('el2')
+        var evObj = document.createEvent('MouseEvents');
+        evObj.initEvent( 'click', true, true );
+        fireOnThis.dispatchEvent(evObj);
+    }
+    function click2(){
+      alert('you cloicked me!')
+    }
+    setTimeout(function(){
+      clearCapture();
+      console.log('clearing capture')
+      console.debug(captures)
+      console.debug(captures.target)
+      fireEvent();
+    }, 4000)
+
+  </script>
+</head>
+<body>
+<p><a href="http://google.com">Google</a></p>
+<p><a href="#" onclick="fireEvent()">Do it</a> </p>
+
+<p><a href="#" id="el1" onclick="click1()">Click Me to click You</a> </p>
+<p><a href="#" id="el2" onclick="click2()">You</a> </p>
+</body>
+</html>

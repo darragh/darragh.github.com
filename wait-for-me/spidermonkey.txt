@@ -1,0 +1,16 @@
+'wait for me' said spidermonkey
+
+twitter example
+
+facebook study
+http://www.facebook.com/note.php?note_id=122869103919
+
+yslow rules of js at the bottom
+ubobtrusive stuff
+
+gmail loading...  - waits til js loaded/ready before showing content.
+
+links with just # href - 
+
+http://www.flickr.com/photos/oter/3707796830/
+http://www.flickr.com/photos/ecoagriculture/2424561636/
