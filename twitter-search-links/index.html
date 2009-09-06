@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <link rel="jetpack" href="twitter-search-links-jetpack.js" name="Better Twitter search links"/>
+  <title>Better Twitter search links using jetpack</title>
+     <style type="text/css">
+        html {background:#E8EAAA url("../137darragh.png") top right no-repeat; font-family:sans-serif;}
+        body {width: 800px}
+        #paste { width: 800px}
+        #paste , .syntax .hll { background-color: #ffffcc }
+        #paste , .syntax  { background: white; }
+        #paste .c, .syntax .c { color: #60a0b0; font-style: italic } /* Comment */
+        #paste .err, .syntax .err { border: 1px solid #FF0000 } /* Error */
+        #paste .k, .syntax .k { color: #007020; font-weight: bold } /* Keyword */
+        #paste .o, .syntax .o { color: #666666 } /* Operator */
+        #paste .cm, .syntax .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+        #paste .cp, .syntax .cp { color: #007020 } /* Comment.Preproc */
+        #paste .c1, .syntax .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+        #paste .cs, .syntax .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+        #paste .gd, .syntax .gd { color: #A00000 } /* Generic.Deleted */
+        #paste .ge, .syntax .ge { font-style: italic } /* Generic.Emph */
+        #paste .gr, .syntax .gr { color: #FF0000 } /* Generic.Error */
+        #paste .gh, .syntax .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+        #paste .gi, .syntax .gi { color: #00A000 } /* Generic.Inserted */
+        #paste .go, .syntax .go { color: #808080 } /* Generic.Output */
+        #paste .gp, .syntax .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+        #paste .gs, .syntax .gs { font-weight: bold } /* Generic.Strong */
+        #paste .gu, .syntax .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+        #paste .gt, .syntax .gt { color: #0040D0 } /* Generic.Traceback */
+        #paste .kc, .syntax .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+        #paste .kd, .syntax .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+        #paste .kn, .syntax .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+        #paste .kp, .syntax .kp { color: #007020 } /* Keyword.Pseudo */
+        #paste .kr, .syntax .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+        #paste .kt, .syntax .kt { color: #902000 } /* Keyword.Type */
+        #paste .m, .syntax .m { color: #40a070 } /* Literal.Number */
+        #paste .s, .syntax .s { color: #4070a0 } /* Literal.String */
+        #paste .na, .syntax .na { color: #4070a0 } /* Name.Attribute */
+        #paste .nb, .syntax .nb { color: #007020 } /* Name.Builtin */
+        #paste .nc, .syntax .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+        #paste .no, .syntax .no { color: #60add5 } /* Name.Constant */
+        #paste .nd, .syntax .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+        #paste .ni, .syntax .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+        #paste .ne, .syntax .ne { color: #007020 } /* Name.Exception */
+        #paste .nf, .syntax .nf { color: #06287e } /* Name.Function */
+        #paste .nl, .syntax .nl { color: #002070; font-weight: bold } /* Name.Label */
+        #paste .nn, .syntax .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+        #paste .nt, .syntax .nt { color: #062873; font-weight: bold } /* Name.Tag */
+        #paste .nv, .syntax .nv { color: #bb60d5 } /* Name.Variable */
+        #paste .ow, .syntax .ow { color: #007020; font-weight: bold } /* Operator.Word */
+        #paste .w, .syntax .w { color: #bbbbbb } /* Text.Whitespace */
+        #paste .mf, .syntax .mf { color: #40a070 } /* Literal.Number.Float */
+        #paste .mh, .syntax .mh { color: #40a070 } /* Literal.Number.Hex */
+        #paste .mi, .syntax .mi { color: #40a070 } /* Literal.Number.Integer */
+        #paste .mo, .syntax .mo { color: #40a070 } /* Literal.Number.Oct */
+        #paste .sb, .syntax .sb { color: #4070a0 } /* Literal.String.Backtick */
+        #paste .sc, .syntax .sc { color: #4070a0 } /* Literal.String.Char */
+        #paste .sd, .syntax .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+        #paste .s2, .syntax .s2 { color: #4070a0 } /* Literal.String.Double */
+        #paste .se, .syntax .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+        #paste .sh, .syntax .sh { color: #4070a0 } /* Literal.String.Heredoc */
+        #paste .si, .syntax .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+        #paste .sx, .syntax .sx { color: #c65d09 } /* Literal.String.Other */
+        #paste .sr, .syntax .sr { color: #235388 } /* Literal.String.Regex */
+        #paste .s1, .syntax .s1 { color: #4070a0 } /* Literal.String.Single */
+        #paste .ss, .syntax .ss { color: #517918 } /* Literal.String.Symbol */
+        #paste .bp, .syntax .bp { color: #007020 } /* Name.Builtin.Pseudo */
+        #paste .vc, .syntax .vc { color: #bb60d5 } /* Name.Variable.Class */
+        #paste .vg, .syntax .vg { color: #bb60d5 } /* Name.Variable.Global */
+        #paste .vi, .syntax .vi { color: #bb60d5 } /* Name.Variable.Instance */
+        #paste .il, .syntax .il { color: #40a070 } /* Literal.Number.Integer.Long */
+    </style>
+</head>
+<body>
+<h1>Better Twitter search links using jetpack</h1>
+<p>6th September 2009</p>
+
+<p>The new twitter home page lists trending topics and features a prominant search box. Clicking a trending topic loads it as a search using ajax.
+  Two small details niggle me:
+</p>
+<ul>
+      <li>After clicking, the only feedback I get is when the search loads, perhaps a second or two later.</li>
+      <li>When the search loads, it needs a vertical scrollbar which shifts the page to the left about 10 pixels.</li>
+    </ul>
+<object width="630" height="356"> <param name="movie" value="http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/jingswfplayer.swf"></param> <param name="quality" value="high"></param> <param name="bgcolor" value="#FFFFFF"></param> <param name="flashVars" value="thumb=http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/FirstFrame.jpg&containerwidth=850&containerheight=480&loaderstyle=jing&content=http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/normal.swf"></param> <param name="allowFullScreen" value="true"></param> <param name="scale" value="showall"></param> <param name="allowScriptAccess" value="always"></param> <param name="base" value="http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/"></param>  <embed src="http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/jingswfplayer.swf" quality="high" bgcolor="#FFFFFF" width="630" height="356" type="application/x-shockwave-flash" allowScriptAccess="always" flashVars="thumb=http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/FirstFrame.jpg&containerwidth=630&containerheight=356&loaderstyle=jing&content=http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/normal.swf" allowFullScreen="true" base="http://content.screencast.com/users/darraghcurran/folders/Jing/media/181197ed-ffea-4981-8206-4dc3c2b6b84c/" scale="showall"></embed> </object>
+
+<p>Putting the topic into the search box as soon as you click it makes it obvious that it performs a search. It also gives immediate feedback that the click has done something. The distracting horizontal shift is easily avoided. Here's what it looks like with these two niggles corrected.</p>
+
+<object width="630" height="360"> <param name="movie" value="http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/jingswfplayer.swf"></param> <param name="quality" value="high"></param> <param name="bgcolor" value="#FFFFFF"></param> <param name="flashVars" value="thumb=http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/FirstFrame.jpg&containerwidth=852&containerheight=486&loaderstyle=jing&content=http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/better.swf"></param> <param name="allowFullScreen" value="true"></param> <param name="scale" value="showall"></param> <param name="allowScriptAccess" value="always"></param> <param name="base" value="http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/"></param>  <embed src="http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/jingswfplayer.swf" quality="high" bgcolor="#FFFFFF" width="630" height="360" type="application/x-shockwave-flash" allowScriptAccess="always" flashVars="thumb=http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/FirstFrame.jpg&containerwidth=630&containerheight=360&loaderstyle=jing&content=http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/better.swf" allowFullScreen="true" base="http://content.screencast.com/users/darraghcurran/folders/Jing/media/3a657903-fde8-495a-9249-c35eda895527/" scale="showall"></embed> </object>
+
+<p>You could go one step further. Updating the search box is an improvement, but I could understand people thinking that's great, now I've to click the search button. But it's not a biggie, since it'll probably load before they can move the mouse to the button.</p>
+
+<h3>Trying out jetpack</h3>
+<p>This provided a perfect excuse to give jetpack a go." Jetpack is an API for allowing you to write Firefox add-ons using the web technologies you already know." Blah blah - click here to install etc...</p>
+<div id="paste" class="lang-js code">
+    <div class="code"><table class="syntaxtable"><tr><td class="code"><div class="syntax"><pre><span class="nx">jetpack</span><span class="p">.</span><span class="nx">tabs</span><span class="p">.</span><span class="nx">onReady</span><span class="p">(</span><span class="kd">function</span> <span class="nx">onNextPage</span><span class="p">(</span><span class="nx">doc</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">doc</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/http:\/\/twitter.com/</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">doc</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="s1">&#39;overflow&#39;</span><span class="o">:</span> <span class="s1">&#39;-moz-scrollbars-vertical&#39;</span><span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">doc</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;#trends a, #trends_list a&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="nx">doc</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;#home_search_q, #sidebar_search_q&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">));</span>
+    <span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">doc</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;a.search-link&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="nx">doc</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;#sidebar_search_q&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">));</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+  </div>
+<div class="footer"></div>
+      </div>
+    </div> </body>
+</html>
