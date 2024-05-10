@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="roi.css">
+    <title>Understanding the transformative impact of AI-first customer service on your business</title>
+</head>
+<body>
+<p>Fin Agent will instantly answer 30 &rAarr; 80% of your customer questions so that your team don't have to.</p>
+<div style="padding-top: 1em; text-align: justify">
+    Assuming your team handles
+    <span class="compositeSlider">
+        <input type="range" id="conversationVolumeSlider" min="100" max="100000" value="10000" class="slider"/>
+        <span class="compositeSliderValue">10000</span> <label for="conversationVolumeSlider">conversations a month</label>
+    </span>
+     with a
+
+    <span class="compositeSlider">
+        <input type="range" id="supportTeamSizeSlider" min="1" max="1000" value="20" class="slider"/>
+        <label for="supportTeamSizeSlider">support team size</label> of <span class="compositeSliderValue">20</span>
+    </span>
+    with an average
+    <span class="compositeSlider">
+        <input type="range" id="averageMonthlyCostPerEmployeeSlider" min="1000" max="7000" value="4000" class="slider"/>
+        <label for="averageMonthlyCostPerEmployeeSlider">monthly cost</label> of $<span class="compositeSliderValue">4000</span>
+    </span>
+    per team member...
+
+    <p><strong>Then.... </strong> with a  <span class="compositeSlider">
+        <input type="range" id="resolutionRateSlider" min="20" max="100" value="40" class="slider"/>
+        <label for="resolutionRateSlider">resolution rate of </label><span class="compositeSliderValue">40</span>%
+    </span></p>
+    <p id="roi-output"></p>
+    <p id="roi-explanation" style="font-size: 50%; color: grey;"></p>
+</div>
+<script src="roi.js"></script>
+</body>
+</html>

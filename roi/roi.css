@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    line-height: 2em;
+    margin: 0;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+.calculator {
+    margin: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.top-row {
+    display: flex;
+}
+
+.left-panel, .right-panel {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.left-panel {
+    width: 30%;
+    border-right: none; /* seamless between panels */
+}
+
+.right-panel {
+    width: 70%;
+    text-align: center;
+}
+
+.assumptions-row {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none; /* seamless between sections */
+    display: flex; /* Align child elements horizontally */
+    justify-content: space-around; /* Distribute space around items */
+}
+
+.compositeSlider {
+    position:relative;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.compositeSlider input {
+    position: absolute;
+    top: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}

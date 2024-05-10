@@ -2,10 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="roi.css">
     <title>Understanding the transformative impact of AI-first customer service on your business</title>
 </head>
 <body>
 <h1>AI-first customer service is transformative for your business</h1>
-<p>Hello world</p>
+<div class="calculator">
+    <div class="top-row">
+        <div class="left-panel">
+            <div class="inputs">
+                <label for="conversations">Support Conversations per Month:</label>
+                <input type="number" id="conversations" value="10000" min="1">
+                <br/>
+                <br/>
+                <label for="teamSize">Support Team Size:</label>
+                <input type="number" id="teamSize" value="20" min="1">
+            </div>
+        </div>
+        <div class="right-panel">
+            <h2>Estimated Savings</h2>
+            <div id="impactMessage" style="white-space: pre"></div>
+        </div>
+    </div>
+
+    <div class="assumptions-row">
+        <div class="assumptions">
+            <h3><label for="resolutionSlider">Resolution Rate</label></h3>
+            <div class="compositeSlider">
+                <div class="slider-labels">
+                    <button type="button" onclick="setSliderValue(this,80)"><strong>High (80%)</strong><br/><span class="description">Best in class</span></button>
+                    <button type="button" onclick="setSliderValue(this,50)">Typical (42%)</button>
+                    <button type="button" onclick="setSliderValue(this,30)">Low (30%)</button>
+                </div>
+                <input type="range" id="resolutionSlider" min="0" max="100" value="42" class="slider"/>
+                <span class="compositeSliderValue">42</span>%
+            </div>
+
+            <h3><label for="involvementSlider">Involvement Rate</label></h3>
+            <div class="compositeSlider">
+                <div class="slider-labels">
+                    <button type="button" onclick="setSliderValue(this,100)"><strong>High (100%)</strong><br/><span class="description">Best in class</span></button>
+                    <button type="button" onclick="setSliderValue(this,50)">Typical (50%)</button>
+                    <button type="button" onclick="setSliderValue(this,20)">Low (20%)</button>
+                </div>
+                <input type="range" id="involvementSlider" min="0" max="100" value="50" class="slider"/>
+                <span class="compositeSliderValue">50</span>%
+            </div>
+
+            <h3><label for="averageMonthlyCostSlider">Average CS Team Salary</label></h3>
+            <div class="compositeSlider">
+                <div class="slider-labels">
+                    <button type="button" onclick="setSliderValue(this,6000)"><strong>High ($6000)</strong><br/><span class="description">Best in class</span></button>
+                    <button type="button" onclick="setSliderValue(this,4000)">Typical ($4000)</button>
+                    <button type="button" onclick="setSliderValue(this,1000)">Low ($1000)</button>
+                </div>
+                <input type="range" id="averageMonthlyCostSlider" min="100" max="6000" value="4000" class="slider"/>
+                $<span class="compositeSliderValue">4000</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="roi.js"></script>
 </body>
 </html>
