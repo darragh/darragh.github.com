@@ -7,33 +7,39 @@
     <title>Understanding the transformative impact of AI-first customer service on your business</title>
 </head>
 <body>
-<p>Fin Agent will instantly answer 30 &rAarr; 80% of your customer questions so that your team don't have to.</p>
-<div style="padding-top: 1em; text-align: justify">
+<div class="magicInkStyle">
+    <p>Fin instantly answers 30 &rAarr; 80% of your customer questions so that your team don't have to.</p>
     Assuming your team handles
-    <span class="compositeSlider">
-        <input type="range" id="conversationVolumeSlider" min="100" max="100000" value="10000" class="slider"/>
-        <span class="compositeSliderValue">10000</span> <label for="conversationVolumeSlider">conversations a month</label>
+    <span class="compositeSlider inlineSlider">
+        <input type="range" id="conversationVolumeInput" min="100" max="100000" value="10000" class="slider"/>
+        <span class="compositeSliderValue">10000</span> <label for="conversationVolumeInput">conversations a month</label>
     </span>
      with a
 
-    <span class="compositeSlider">
-        <input type="range" id="supportTeamSizeSlider" min="1" max="1000" value="20" class="slider"/>
-        <label for="supportTeamSizeSlider">support team size</label> of <span class="compositeSliderValue">20</span>
+    <span class="compositeSlider inlineSlider">
+        <input type="range" id="supportTeamSizeInput" min="1" max="1000" value="20" class="slider"/>
+        <label for="supportTeamSizeInput">support team size</label> of <span class="compositeSliderValue">20</span>
     </span>
     with an average
-    <span class="compositeSlider">
-        <input type="range" id="averageMonthlyCostPerEmployeeSlider" min="1000" max="7000" value="4000" class="slider"/>
-        <label for="averageMonthlyCostPerEmployeeSlider">monthly cost</label> of $<span class="compositeSliderValue">4000</span>
+    <span class="compositeSlider inlineSlider">
+        <input type="range" id="averageMonthlyCostPerEmployeeInput" min="1000" max="7000" value="4000" class="slider"/>
+        <label for="averageMonthlyCostPerEmployeeInput">monthly cost</label> of $<span class="compositeSliderValue">4000</span>
     </span>
     per team member...
 
-    <p><strong>Then.... </strong> with a  <span class="compositeSlider">
-        <input type="range" id="resolutionRateSlider" min="20" max="100" value="40" class="slider"/>
-        <label for="resolutionRateSlider">resolution rate of </label><span class="compositeSliderValue">40</span>%
+    <p><strong>Then.... </strong> with a  <span class="compositeSlider inlineSlider">
+        <input type="range" id="resolutionRateInput" min="20" max="100" value="40" class="slider"/>
+        <label for="resolutionRateInput">resolution rate of </label><span class="compositeSliderValue">40</span>%
     </span></p>
-    <p id="roi-output"></p>
-    <p id="roi-explanation" style="font-size: 50%; color: grey;"></p>
+    <input type="hidden" id="involvementRateInput" value="100"/>
+    <p id="roi-output">You could save <span class="monthlyLaborCostAvoidanceOutput"></span> on staffing costs per month,
+        by spending <span class="monthlyFinCostsOutput"></span> on Fin</p>
+    <p id="roi-explanation" style="font-size: 50%; color: grey;">
+        Not all conversations require the same human effort, in practice we observe humans take <span class="handlingTimeMultipleForHumanHandledOutput"></span>x longer on the conversations Fin cannot resolve, vs those it can.
+    </p>
 </div>
+<a href="index.html">Form version</a>
+
 <script src="roi.js"></script>
 </body>
 </html>

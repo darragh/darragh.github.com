@@ -1,10 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 2em;
-    line-height: 2em;
     margin: 0;
     padding: 20px;
     background: #f0f0f0;
+}
+
+.magicInkStyle {
+    font-size: 2em;
+    line-height: 2em;
+    text-align: justify;
 }
 
 .calculator {
@@ -23,21 +27,13 @@ body {
 }
 
 .left-panel {
-    width: 30%;
+    width: 50%;
     border-right: none; /* seamless between panels */
 }
 
 .right-panel {
-    width: 70%;
-    text-align: center;
-}
-
-.assumptions-row {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-top: none; /* seamless between sections */
-    display: flex; /* Align child elements horizontally */
-    justify-content: space-around; /* Distribute space around items */
+    width: 50%;
+    text-align: left;
 }
 
 .compositeSlider {
@@ -46,7 +42,7 @@ body {
     white-space: nowrap;
 }
 
-.compositeSlider input {
+.inlineSlider input {
     position: absolute;
     top: -1.5em;
     left: 50%;

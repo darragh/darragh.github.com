@@ -6,62 +6,75 @@
     <title>Understanding the transformative impact of AI-first customer service on your business</title>
 </head>
 <body>
-<h1>AI-first customer service is transformative for your business</h1>
 <div class="calculator">
     <div class="top-row">
         <div class="left-panel">
             <div class="inputs">
-                <label for="conversations">Support Conversations per Month:</label>
-                <input type="number" id="conversations" value="10000" min="1">
+                <label for="conversationVolumeInput">Support Conversations per Month:</label>
+                <input type="number" id="conversationVolumeInput" value="10000" min="1">
                 <br/>
                 <br/>
-                <label for="teamSize">Support Team Size:</label>
-                <input type="number" id="teamSize" value="20" min="1">
+                <label for="supportTeamSizeInput">Support Team Size:</label>
+                <input type="number" id="supportTeamSizeInput" value="20" min="1">
+            </div>
+
+            <div class="assumptions">
+                <div class="compositeSlider">
+                    <h4>
+                        <label for="resolutionRateInput">Resolution Rate</label> <span class="compositeSliderValue">42</span>%
+                        <input type="range" id="resolutionRateInput" min="0" max="100" value="42" class="slider"/>
+                    </h4>
+                    <div class="slider-labels">
+                        <button type="button" onclick="setSliderValue(this,30)">Low (30%)<br/><span class="description">10% of our customers see this</span></button>
+                        <button type="button" onclick="setSliderValue(this,50)">Typical (42%)<br/><span class="description">Average resolution rate</span> </button>
+                        <button type="button" onclick="setSliderValue(this,80)"><strong>High (80%)</strong><br/><span class="description">Best in class. Companies like <a href="#">XXX</a></span></button>
+                    </div>
+                </div>
+
+                <div class="compositeSlider">
+                    <h4>
+                        <label for="involvementRateInput">Involvement Rate</label>  <span class="compositeSliderValue">50</span>%
+                        <input type="range" id="involvementRateInput" min="0" max="100" value="50" class="slider"/>
+                    </h4>
+                    <div class="slider-labels">
+                        <button type="button" onclick="setSliderValue(this,20)">Low (20%)<br/><span class="description">Targetted</span></button>
+                        <button type="button" onclick="setSliderValue(this,50)">Typical (50%)<br/><span class="description">Chat only</span></button>
+                        <button type="button" onclick="setSliderValue(this,100)"><strong>High (100%)</strong><br/><span class="description">All you support</span></button>
+                    </div>
+                </div>
+
+                <div class="compositeSlider">
+                    <h4>
+                        <label for="averageMonthlyCostPerEmployeeInput">Average CS Team Monthly cost</label>  $<span class="compositeSliderValue">4000</span>
+                        <input type="range" id="averageMonthlyCostPerEmployeeInput" min="100" max="6000" value="4000" class="slider"/>
+                    </h4>
+                    <div class="slider-labels">
+                        <button type="button" onclick="setSliderValue(this,1000)">Low ($1000)<br/><span class="description">Low cost regions</span></button>
+                        <button type="button" onclick="setSliderValue(this,4000)"><strong>Typical ($4000)</strong><br/><span class="description">Europe</span></button>
+                        <button type="button" onclick="setSliderValue(this,6000)">High ($6000)<br/><span class="description">USA</span></button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="right-panel">
             <h2>Estimated Savings</h2>
-            <div id="impactMessage" style="white-space: pre"></div>
-        </div>
-    </div>
+            <p>
+                You currently spend approximately  <span class="monthlySalariesCostOutput"></span> on support salaries.<br/>
+                Each team member handles approximately <span class="conversationsPerEmployeePerMonthOutput"></span> conversations per month.<br/>
 
-    <div class="assumptions-row">
-        <div class="assumptions">
-            <h3><label for="resolutionSlider">Resolution Rate</label></h3>
-            <div class="compositeSlider">
-                <div class="slider-labels">
-                    <button type="button" onclick="setSliderValue(this,80)"><strong>High (80%)</strong><br/><span class="description">Best in class</span></button>
-                    <button type="button" onclick="setSliderValue(this,50)">Typical (42%)</button>
-                    <button type="button" onclick="setSliderValue(this,30)">Low (30%)</button>
-                </div>
-                <input type="range" id="resolutionSlider" min="0" max="100" value="42" class="slider"/>
-                <span class="compositeSliderValue">42</span>%
-            </div>
+                Fin will resolve approximately <span class="resolvedConversationsMonthlyOutput"></span> conversations per month.<br/>
 
-            <h3><label for="involvementSlider">Involvement Rate</label></h3>
-            <div class="compositeSlider">
-                <div class="slider-labels">
-                    <button type="button" onclick="setSliderValue(this,100)"><strong>High (100%)</strong><br/><span class="description">Best in class</span></button>
-                    <button type="button" onclick="setSliderValue(this,50)">Typical (50%)</button>
-                    <button type="button" onclick="setSliderValue(this,20)">Low (20%)</button>
-                </div>
-                <input type="range" id="involvementSlider" min="0" max="100" value="50" class="slider"/>
-                <span class="compositeSliderValue">50</span>%
-            </div>
-
-            <h3><label for="averageMonthlyCostSlider">Average CS Team Salary</label></h3>
-            <div class="compositeSlider">
-                <div class="slider-labels">
-                    <button type="button" onclick="setSliderValue(this,6000)"><strong>High ($6000)</strong><br/><span class="description">Best in class</span></button>
-                    <button type="button" onclick="setSliderValue(this,4000)">Typical ($4000)</button>
-                    <button type="button" onclick="setSliderValue(this,1000)">Low ($1000)</button>
-                </div>
-                <input type="range" id="averageMonthlyCostSlider" min="100" max="6000" value="4000" class="slider"/>
-                $<span class="compositeSliderValue">4000</span>
-            </div>
+                We estimate that will save you  <span class="monthlyHoursSavedEstimateOutput"></span> hours<br/>
+                which avoids spending <span class="monthlyLaborCostAvoidanceOutput"></span> on staffing costs,<br/>
+                assuming it takes on average <span class="handlingTimeMultipleForHumanHandledOutput"></span> longer for a human to handle a conversation Fin couldn't handle vs one it does.
+            </p>
         </div>
     </div>
 </div>
+<a href="magic.html">Text version</a>
+
+<span data-team-size></span>
+
 
 <script src="roi.js"></script>
 </body>
