@@ -44,7 +44,15 @@ body {
 
 .inlineSlider input {
     position: absolute;
-    top: -1.5em;
+    top: -1.3em;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.inlineSlider input {
+    opacity: 0.3;
+}
+
+.inlineSlider input:hover {
+    opacity: 1;
 }

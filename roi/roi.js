@@ -5,17 +5,22 @@ function calculate() {
     const resolutionRate = parseFloat(document.getElementById('resolutionRateInput').value);
     const involvementRate = parseFloat(document.getElementById('involvementRateInput').value);
     const costPerEmployeeMonth = parseFloat(document.getElementById('averageMonthlyCostPerEmployeeInput').value);
-    const ratioOfFinConversationTimeVsHuman = 0.33; //todo - derive that from team size vs volume...
+    const ratioOfFinConversationTimeVsHuman = 0.33;
     const costPerResolution = 0.99;
 
     const resolvedConversations = conversations * (resolutionRate/100.0) * (involvementRate/100.0);
-    const monthlyPerAgent = conversations / teamSize
-    const hoursPerConversation = (40 * 4) / monthlyPerAgent ;
-    const timeSavings = resolvedConversations * (hoursPerConversation * ratioOfFinConversationTimeVsHuman); // assuming 0.5 hours saved per resolution
+
+    const totalEmployeeHours = teamSize * (40 * 4);
+    const humanWeightedResolutions = (conversations - resolvedConversations) / ratioOfFinConversationTimeVsHuman;
+    const timeSavings = totalEmployeeHours * (resolvedConversations/(resolvedConversations+humanWeightedResolutions));
+    // rough modelling - https://docs.google.com/spreadsheets/d/1QprxDyqQCCnXLw3kqP-3HiRnj9SFaXUtuvyzpHbnc8E/edit#gid=0
+    // really dumb model - just assumes fin handled would take a human ratioOfFinConversationTimeVsHuman amount of time vs the ones find doesn't handle
+
+    const percentageTeamSavings = 100 * (timeSavings / totalEmployeeHours);
+
     const personMonthsSaved = timeSavings / (40 * 4);
     const costSavings = costPerEmployeeMonth * personMonthsSaved;
     const finCosts = resolvedConversations * costPerResolution;
-    const roiDollars = costSavings - finCosts;
 
     setOutput('.teamSizeOutput', `${teamSize}`)
     setOutput('.resolutionRateOutput', `${resolutionRate}%`)
@@ -27,6 +32,7 @@ function calculate() {
     setOutput('.monthlyLaborCostAvoidanceOutput', `$${costSavings.toFixed(2)}`)
     setOutput('.monthlyFinCostsOutput', `$${finCosts.toFixed(2)}`)
     setOutput('.handlingTimeMultipleForHumanHandledOutput', `${(1.0 / ratioOfFinConversationTimeVsHuman).toFixed(0)}`)
+    setOutput('.percentageSavings', `${percentageTeamSavings.toFixed(1)}`)
 }
 
 function setOutput(selector, text) {
@@ -44,10 +50,6 @@ function setSliderValue(target, value) {
     calculate();
 }
 
-document.querySelectorAll('input').forEach(input => {
-    input.addEventListener('change', calculate);
-});
-
 document.querySelectorAll('input.slider').forEach(input => {
     input.addEventListener('input', function() {
         var compositeSlider = this.closest('.compositeSlider');
@@ -56,5 +58,35 @@ document.querySelectorAll('input.slider').forEach(input => {
         calculate();
     });
 });
+document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('change', calculate);
+});
 
+
+
+function getQueryParam(param) {
+    const params = new URLSearchParams(window.location.search);
+    const value = params.get(param);
+    // Check if the parameter is a positive integer
+    return (value !== null && /^\d+$/.test(value)) ? parseInt(value, 10) : null;
+}
+
+function readQueryParam(param) {
+    const value = getQueryParam(param);
+    if (value == null) return;
+    let input = document.getElementById(param + 'Input');
+    input.value = value;
+    const event = new Event('input', {bubbles: true, cancelable: true});
+    input.dispatchEvent(event);
+}
+
+function readQueryParams () {
+    readQueryParam('resolutionRate');
+    readQueryParam('conversationVolume');
+    readQueryParam('supportTeamSize');
+    readQueryParam('involvementRate');
+    readQueryParam('averageMonthlyCostPerEmployee');
+}
+
+readQueryParams();
 calculate();
