@@ -21,29 +21,29 @@
             <div class="assumptions">
                 <div class="compositeSlider">
                     <h4>
-                        <label for="resolutionRateInput">Resolution Rate</label> <span class="compositeSliderValue">42</span>%
+                        <label for="resolutionRateInput">Fin Resolution Rate</label> <span class="compositeSliderValue">42</span>%
                         <input type="range" id="resolutionRateInput" min="0" max="100" value="42" class="slider"/>
                     </h4>
                     <div class="slider-labels">
                         <button type="button" onclick="setSliderValue(this,30)">Low (30%)<br/><span class="description">10% of our customers see this</span></button>
-                        <button type="button" onclick="setSliderValue(this,50)">Typical (42%)<br/><span class="description">Average resolution rate</span> </button>
+                        <button type="button" onclick="setSliderValue(this,42)">Typical (42%)<br/><span class="description">Average resolution rate</span> </button>
                         <button type="button" onclick="setSliderValue(this,80)"><strong>High (80%)</strong><br/><span class="description">Best in class. Companies like <a href="#">XXX</a></span></button>
+                    </div>
+                </div>
+                <div class="compositeSlider">
+                    <h4>
+                        <label for="anticipatedCopilotEfficiencyInput">Copilot efficiency improvement</label> <span class="compositeSliderValue">5</span>%
+                        <input type="range" id="anticipatedCopilotEfficiencyInput" min="3" max="30" value="5" class="slider"/>
+                    </h4>
+                    <div class="slider-labels">
+                        <button type="button" onclick="setSliderValue(this,3)">Low (3%)<br/><span class="description">10% of our customers see this</span></button>
+                        <button type="button" onclick="setSliderValue(this,5)">Typical (5%)<br/><span class="description">Average efficiency gain</span> </button>
+                        <button type="button" onclick="setSliderValue(this,30)"><strong>High (30%)</strong><br/><span class="description">Best in class. Companies like <a href="#">XXX</a></span></button>
                     </div>
                 </div>
 
                 <input type="hidden" id="involvementRateInput" value="100"/>
-
-<!--                <div class="compositeSlider">-->
-<!--                    <h4>-->
-<!--                        <label for="involvementRateInput">Involvement Rate</label>  <span class="compositeSliderValue">50</span>%-->
-<!--                        <input type="range" id="involvementRateInput" min="0" max="100" value="50" class="slider"/>-->
-<!--                    </h4>-->
-<!--                    <div class="slider-labels">-->
-<!--                        <button type="button" onclick="setSliderValue(this,20)">Low (20%)<br/><span class="description">Targetted</span></button>-->
-<!--                        <button type="button" onclick="setSliderValue(this,50)">Typical (50%)<br/><span class="description">Chat only</span></button>-->
-<!--                        <button type="button" onclick="setSliderValue(this,100)"><strong>High (100%)</strong><br/><span class="description">All you support</span></button>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <input type="hidden" id="anticipatedYearOverYearGrowthRateInput" value="15"/>
 
                 <div class="compositeSlider">
                     <h4>
@@ -57,26 +57,37 @@
                     </div>
                 </div>
             </div>
+            <p>
+                * In our calculations we are assuming it takes on average <span class="handlingTimeMultipleForHumanHandledOutput"></span> longer for a human to handle a
+                conversation Fin couldn't handle vs one it does.
+            </p>
         </div>
         <div class="right-panel">
             <h2>Estimated Savings</h2>
+            <p>With monthly conversation volume of <span class="conversationVolumeOutput"></span>
+                and <span class="teamSizeOutput"></span> active inbox teammates, with a fully loaded cost per person of
+                <span class="costPerEmployeeMonthOutput"></span> you are spending approximately <span class="monthlySalariesCostOutput"></span> per month on
+                support team staffing. On average, each team member handles <span class="conversationsMonthlyPerHumanOutput"></span> conversations per month.
+            </p>
+
+            <p>Based on anticipated resolution rate of <span class="resolutionRateOutput"></span> <strong>Fin Agent....</strong>  could handle
+                <span class="resolvedConversationsMonthlyOutput"></span> conversations per month, which would costing you <span class="monthlyFinCostsOutput"></span> but enable you to save
+                <span class="monthlyLaborCostAvoidanceOutput"></span> (<span class="percentageSavingsOutput"></span>%) per month on staffing costs.</p>
+
             <p>
-                You currently spend approximately  <span class="monthlySalariesCostOutput"></span> on support salaries.<br/>
-                Each team member handles approximately <span class="conversationsPerEmployeePerMonthOutput"></span> conversations per month.<br/>
+                In addition to Fin Agent, Fin Copilot improves the efficiency of your support team. Based on <span class="anticipatedCopilotEfficiency"></span>% efficiency uplift
+                this could save you an additional <span class="anticipatedCopilotLaborCostAvoidanceOutput"></span> on support costs per month.
+            </p>
 
-                Fin will resolve approximately <span class="resolvedConversationsMonthlyOutput"></span> conversations per month.<br/>
-
-                We estimate that will save you  <span class="monthlyHoursSavedEstimateOutput"></span> hours<br/>
-                which avoids spending <span class="monthlyLaborCostAvoidanceOutput"></span> (<span class="percentageSavings"></span>%) on staffing costs,<br/>
-                assuming it takes on average <span class="handlingTimeMultipleForHumanHandledOutput"></span> longer for a human to handle a conversation Fin couldn't handle vs one it does.
+            <p>By embracing AI First Intercom, adopting Fin and achieving a <span class="resolutionRateOutput"></span> resolution rate, and adopting Copilot and
+                achieving a <span class="anticipatedCopilotEfficiency"></span>% efficiency gain, you could save
+                <span class="anticipateAnnualNetSavingsOutput"></span> (NET of Intercom AI costs) annually on your current support volume.
             </p>
         </div>
     </div>
 </div>
-<a href="magic.html">Text version</a>
 
 <span data-team-size></span>
-
 
 <script src="roi.js"></script>
 </body>
