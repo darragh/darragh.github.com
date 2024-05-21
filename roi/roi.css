@@ -1,8 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f8fa;
+    color: #2f3941;
     margin: 0;
     padding: 20px;
-    background: #f0f0f0;
 }
 
 .magicInkStyle {
