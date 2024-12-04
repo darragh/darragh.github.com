@@ -11,10 +11,24 @@
 
 <script>
     window.intercomSettings = {
-      api_base: "https://api-iam.intercom.io",
-      app_id: "pef3qizw",
+        api_base: "https://api-iam.intercom.io",
+        app_id: "pef3qizw"
     };
-  </script>
+
+    const allowedQueryParams = ['user_id', 'email'];
+
+    function setIntercomParamsFromURL(allowedParams) {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        allowedParams.forEach(param => {
+            const value = urlParams.get(param);
+            if (value) {
+                window.intercomSettings[param] = value;
+            }
+        });
+    }
+    setIntercomParamsFromURL(allowedQueryParams);
+</script>
   
   
   <script>
